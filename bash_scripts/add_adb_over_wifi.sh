@@ -1,12 +1,11 @@
 #!/bin/bash
 
-echo "starting the process...\n"
+echo "starting the process..."
+echo "type your device ip:"
+read ip
+eval "adb tcpip 5556"
 
-echo "setting adb port to $2\n"
-
-eval "adb tcpip $2"
-
-eval "adb connect $1:$2"
+eval "adb connect $ip"
 
 echo "congratz!!!!! you can remove the usb cable now and be happy"
 
